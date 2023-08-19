@@ -1,0 +1,8 @@
+models ->
+    -> users
+    -> loans
+    -> payments
+    -> invpices
+    -> customers
+    -> settings
+    -> auditlogs
