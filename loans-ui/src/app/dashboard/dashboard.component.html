@@ -1,1 +1,156 @@
-<p>dashboard works!</p>
+<div class="container mt-4">
+    <!-- Dashboard Heading with Reports Button -->
+    <div class="d-flex justify-content-between align-items-center">
+        <h1>Dashboard</h1>
+        <button class="btn btn-primary">Reports</button>
+    </div>
+
+    <!-- Boxes Section -->
+    <div class="row mt-4">
+        <!-- Customers Box -->
+        <div class="col-md-2">
+            <div class="card text-white bg-info">
+                <div class="card-body">
+                    <h5 class="card-title">Customers</h5>
+                    <p class="card-text">100</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Loans Box -->
+        <div class="col-md-2">
+            <div class="card text-white bg-success">
+                <div class="card-body">
+                    <h5 class="card-title">Total Loans</h5>
+                    <p class="card-text">500</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Approved Loans Box -->
+        <div class="col-md-2">
+            <div class="card text-white bg-primary">
+                <div class="card-body">
+                    <h5 class="card-title">Approved Loans</h5>
+                    <p class="card-text">300</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pending Loans Box -->
+        <div class="col-md-2">
+            <div class="card text-white bg-warning">
+                <div class="card-body">
+                    <h5 class="card-title">Pending Loans</h5>
+                    <p class="card-text">100</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Risk Loans Box -->
+        <div class="col-md-2">
+            <div class="card text-white bg-danger">
+                <div class="card-body">
+                    <h5 class="card-title">Risk Loans</h5>
+                    <p class="card-text">20</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Receivables Box -->
+        <div class="col-md-2">
+            <div class="card text-white bg-secondary">
+                <div class="card-body">
+                    <h5 class="card-title">Total Receivables</h5>
+                    <p class="card-text">$10,000</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Loans Table -->
+    <h2 class="mt-4">Recent Loans</h2>
+    <table class="table table-bordered mt-2">
+        <thead>
+            <tr>
+                <th>Loan ID</th>
+                <th>Customer Name</th>
+                <th>Loan Type</th>
+                <th>Last Payment</th>
+                <th>Payment Due</th>
+                <th>Loan Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>12345</td>
+                <td>John Doe</td>
+                <td>Personal</td>
+                <td>2023-08-15</td>
+                <td>$500</td>
+                <td>Approved</td>
+            </tr>
+            <tr>
+                <td>67890</td>
+                <td>Jane Smith</td>
+                <td>Home</td>
+                <td>2023-08-12</td>
+                <td>$800</td>
+                <td>Pending</td>
+            </tr>
+            <tr>
+                <td>54321</td>
+                <td>Bob Johnson</td>
+                <td>Auto</td>
+                <td>2023-08-18</td>
+                <td>$300</td>
+                <td>Approved</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Recent Customers Table -->
+    <h2 class="mt-4">Recent Customers</h2>
+    <table class="table table-bordered mt-2">
+        <thead>
+            <tr>
+                <th>Customer ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone Number</th>
+                <th>Email Address</th>
+                <th>Address</th>
+                <th>Department</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1001</td>
+                <td>Alice</td>
+                <td>Johnson</td>
+                <td>123-456-7890</td>
+                <td>alice@example.com</td>
+                <td>123 Main St</td>
+                <td>Sales</td>
+            </tr>
+            <tr>
+                <td>1002</td>
+                <td>Charlie</td>
+                <td>Smith</td>
+                <td>987-654-3210</td>
+                <td>charlie@example.com</td>
+                <td>456 Elm St</td>
+                <td>Marketing</td>
+            </tr>
+            <tr>
+                <td>1003</td>
+                <td>Eve</td>
+                <td>Williams</td>
+                <td>555-555-5555</td>
+                <td>eve@example.com</td>
+                <td>789 Oak St</td>
+                <td>HR</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

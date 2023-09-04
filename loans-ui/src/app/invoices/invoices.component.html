@@ -1,1 +1,97 @@
-<p>invoices works!</p>
+<div class="container mt-4">
+    <!-- Invoices Heading with Create New Invoice Button -->
+    <div class="d-flex justify-content-between align-items-center">
+        <h1>Invoices</h1>
+        <button class="btn btn-primary">Create New Invoice</button>
+    </div>
+
+    <!-- Search and Buttons -->
+    <div class="input-group mt-4">
+        <input type="text" class="form-control" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button">Filter</button>
+            <button class="btn btn-outline-secondary" type="button">Sort</button>
+            <button class="btn btn-outline-secondary" type="button">Clear</button>
+        </div>
+    </div>
+
+    <!-- Invoices Table -->
+    <table class="table table-bordered mt-4">
+        <thead>
+            <tr>
+                <th>Payment ID</th>
+                <th>Customer ID</th>
+                <th>Customer Name</th>
+                <th>Amount</th>
+                <th>Tax</th>
+                <th>Mode</th>
+                <th>Date</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Dummy content for 5 rows -->
+            <tr>
+                <td>001</td>
+                <td>1001</td>
+                <td>Alice Johnson</td>
+                <td>$500.00</td>
+                <td>$25.00</td>
+                <td>Credit Card</td>
+                <td>2023-08-15</td>
+                <td>Payment for services</td>
+            </tr>
+            <tr>
+                <td>002</td>
+                <td>1002</td>
+                <td>Bob Smith</td>
+                <td>$800.00</td>
+                <td>$40.00</td>
+                <td>PayPal</td>
+                <td>2023-08-12</td>
+                <td>Invoice #123</td>
+            </tr>
+            <tr>
+                <td>003</td>
+                <td>1003</td>
+                <td>Charlie Williams</td>
+                <td>$300.00</td>
+                <td>$15.00</td>
+                <td>Check</td>
+                <td>2023-08-18</td>
+                <td>Payment for goods</td>
+            </tr>
+            <tr>
+                <td>004</td>
+                <td>1004</td>
+                <td>Eve Davis</td>
+                <td>$250.00</td>
+                <td>$12.50</td>
+                <td>Cash</td>
+                <td>2023-08-20</td>
+                <td>Invoice #456</td>
+            </tr>
+            <tr>
+                <td>005</td>
+                <td>1005</td>
+                <td>Frank Johnson</td>
+                <td>$700.00</td>
+                <td>$35.00</td>
+                <td>Credit Card</td>
+                <td>2023-08-22</td>
+                <td>Payment for services</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Pagination -->
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+    </nav>
+</div>
