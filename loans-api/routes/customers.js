@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+router.use(express.json());
 
 var mongoose = require('mongoose');
 
@@ -48,12 +49,19 @@ router.get('/view', async function(req, res, next) {
 /* insert new customer listing. */
 router.post('/add', async function(req, res, next) {
   try {
+    console.log(req.body)
+    const firstName = req.body.firstName;
+    const  lastName= req.body.lastName  
+    const  emailAddress= req.body.emailAddress;  
+    const  phoneNumber= req.body.phoneNumber  
+    const  dob= req.body.dob   
+
     const customerObj = new customerModel({
-      firstName: 'user2',
-      lastName: 'lastname2',
-      emailAddress: 'abc@gmail.com',
-      phoneNumber: '234354',
-      dob: '01-01-1000'
+      firstName: firstName,
+      lastName: lastName,
+      emailAddress: emailAddress,
+      phoneNumber: phoneNumber,
+      dob: dob 
     });
 
     await customerObj.save(); // Using await to wait for the save operation to complete
@@ -67,17 +75,32 @@ router.post('/add', async function(req, res, next) {
 /* update existing customer */
 router.put('/update', async function(req, res, next) {
   try {
-    const userId = req.query.userId;
-    const customerObj = {
-      firstName: 'user3',
-      lastName: 'lastname3',
-      emailAddress: 'fdfsf@gmail.com',
-      phoneNumber: '45435',
-      dob: '01-01-1000'
-    };
-    await customerModel.findByIdAndUpdate(userId, customerObj); // Using await to wait for the update operation to complete
+    const userId = req.body.userId;
 
-    res.status(200).json({ status: 200, message: "Updated customer successfully" });
+    // Create an update object without _id
+    const updateFields = {
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      emailAddress: req.body.emailAddress,
+      phoneNumber: req.body.phoneNumber,
+      dob: req.body.dob 
+    };
+
+    // Exclude the _id field from the update object
+    delete updateFields._id;
+
+    // Use the { new: true } option to return the updated document
+    const updatedCustomer = await customerModel.findByIdAndUpdate(
+      userId,          // Find by _id
+      updateFields,    // Fields to update
+      { new: true }    // Return the updated document
+    );
+
+    if (!updatedCustomer) {
+      return res.status(404).json({ status: 404, message: "Customer not found" });
+    }
+
+    res.status(200).json({ status: 200, message: "Updated customer successfully", updatedCustomer });
   } catch (error) {
     console.error('Error updating customer:', error);
     res.status(500).json({ status: 500, message: "Unable to update customer" });
