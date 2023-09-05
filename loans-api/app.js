@@ -4,6 +4,23 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const mongoose = require('mongoose');
+
+// Replace 'mongodb://localhost:27017/your-database-name' with your MongoDB URI
+mongoose.connect('mongodb://127.0.0.1:27017/loanmanager', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
+
+const db = mongoose.connection;
+
+// Handle connection errors
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+db.once('open', () => {
+    console.log('Connected to MongoDB database');
+    // You can perform database operations here
+});
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loansRouter =  require('./routes/loans');
@@ -25,8 +42,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+console.log('here');
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/customers', customersRouter);
+app.use('/loans', loansRouter);
+// app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
